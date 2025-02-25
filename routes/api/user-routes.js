@@ -21,6 +21,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   // The JavaScript equivalent to SELECT * FROM users WHERE id = 1;
   User.findOne({
+    attributes: { exclude: ["password"] },
     where: {
       id: req.params.id,
     },
