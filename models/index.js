@@ -5,17 +5,19 @@ const Vote = require("./Vote");
 // create associations
 User.hasMany(Post, {
   foreignKey: "user_id",
+  as: 'posts'
 });
 
 // reverse association Post --> User
 Post.belongsTo(User, {
   foreignKey: "user_id",
+  as: 'user'
 });
 
 // many to many association
 User.belongsToMany(Post, {
   through: Vote,
-  as: "vote_posts",
+  as: "voted_posts",
   foreignKey: "user_id",
 });
 
