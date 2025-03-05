@@ -26,11 +26,12 @@ router.get("/:id", (req, res) => {
     },
     include: [
       {
+        // Loads posts created by the user
         model: Post,
         attributes: ["id", "title", "post_url", "created_at"],
-        as: 'posts'
       },
       {
+        // Loads posts the user has voted on
         model: Post,
         attributes: ["title"],
         through: Vote,

@@ -1,20 +1,17 @@
-const User = require("./User");
+// import all models
 const Post = require("./Post");
+const User = require("./User");
 const Vote = require("./Vote");
 
 // create associations
 User.hasMany(Post, {
   foreignKey: "user_id",
-  as: 'posts'
 });
 
-// reverse association Post --> User
 Post.belongsTo(User, {
   foreignKey: "user_id",
-  as: 'user'
 });
 
-// many to many association
 User.belongsToMany(Post, {
   through: Vote,
   as: "voted_posts",
@@ -27,7 +24,6 @@ Post.belongsToMany(User, {
   foreignKey: "post_id",
 });
 
-// created direct relations for vote model.
 Vote.belongsTo(User, {
   foreignKey: "user_id",
 });
