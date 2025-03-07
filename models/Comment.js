@@ -15,7 +15,7 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        // this means the password must be at least four characters long
+        // this means the comments must be at least 1 character long.
         len: [1],
       },
     },
