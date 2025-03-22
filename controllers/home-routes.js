@@ -34,11 +34,13 @@ router.get("/", (req, res) => {
     .then((dbPostData) => {
       // console.log(dbPostData[0]);
 
+      // We have serialized the data for each post data.
       const posts = dbPostData.map((post) => post.get({ plain: true }));
+
       // pass a single post object into the hompage template
       // the data will need to be serialized since we are using res.render
       // instead of res.json();
-      res.render("homepage", {posts});
+      res.render("homepage", { posts });
     })
     .catch((err) => {
       console.log(err);
