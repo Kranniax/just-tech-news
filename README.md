@@ -23,7 +23,7 @@ To install all node modules and dependencies, please run the command. `npm insta
 
 ## Deployed Website
 
-### [Deployed Link](https://drive.google.com/file/d/1qffadq7xuJuNY_qgEkqsBWag8jM32fra/view)
+### [Deployed Link](https://radiant-crag-69087-fda2dfb12b51.herokuapp.com/)
 
 ## Technologies Used
 
